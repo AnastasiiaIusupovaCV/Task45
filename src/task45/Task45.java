@@ -21,6 +21,21 @@ public class Task45 {
         
         thread1.start();
         thread2.start();
+        
+        try{
+            thread1.join();
+            thread2.join();
+        }
+        catch(InterruptedException e)
+        {
+            System.out.print(e);
+        }
+        
+        T4 thread3= new T4("Thread3");
+        T4 thread4= new T4("Thread4");
+        
+        thread3.start();
+        thread4.start();
     }
     
 }
